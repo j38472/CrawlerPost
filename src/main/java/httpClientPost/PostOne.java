@@ -72,7 +72,7 @@ public class PostOne {
         HttpPost.setHeader("Accept-Language","zh-CN,zh;q=0.9,en;q=0.8");
         HttpPost.setHeader("Cache-Control","no-cache");
         HttpPost.setHeader("Connection","keep-alive");
-//        HttpPost.setHeader("Content-Length","241"); //不知道这里为啥错了  ？？？
+//        HttpPost.setHeader("Content-Length","241"); //不知道这里为啥带上这个参数就请求不到数据  差点就崩溃了  草了啊  ？？？
         HttpPost.setHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8");
         HttpPost.setHeader("Cookie","OUTFOX_SEARCH_USER_ID_NCOO=523494372.1483736; OUTFOX_SEARCH_USER_ID=\"501702399@10.108.160.17\"; _ga=GA1.2.180498389.1617545383; P_INFO=13691347124|1617849888|1|youdaonote|00&99|null&null&null#hen&410100#10#0|&0|null|13691347124; JSESSIONID=aaa7c7xKBQUHB6OJkGoJx; ___rl__test__cookies=1618474097803");
         HttpPost.setHeader("Host","fanyi.youdao.com");
@@ -83,9 +83,7 @@ public class PostOne {
         HttpPost.setHeader("Sec-Fetch-Dest","empty");
         HttpPost.setHeader("Sec-Fetch-Mode","cors");
         HttpPost.setHeader("Sec-Fetch-Site","same-origin");
-
         HttpPost.setHeader("Referer", "https://fanyi.youdao.com");
-
         HttpPost.setHeader("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36X-Requested-With: XMLHttpRequest");
 
 
@@ -159,7 +157,8 @@ public class PostOne {
     }
 
     public String getlts() {
-        String s =Long.toString(new Date().getTime());
+//        new Date().getTime();
+        String s =Long.toString(System.currentTimeMillis());
         return s;
     }
 
